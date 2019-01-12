@@ -20,12 +20,14 @@ export const animateEntrance = ({ dom }) =>
 export const animateChildrenEntrance = ({ dom }) => {
 	let children = [ ...dom.children ]
 
-	return children.map((child, index) => {
+	let side = { 0: '90%', 1: '-90%' }
+
+	return children.map((child, idx) => {
 		setTimeout(() => {
-			child.animate([ { transform: 'translate3d(0,-10%,0)', opacity: 0 }, { transform: 'none', opacity: 1 } ], {
-				duration: 900,
+			child.animate([ { transform: `translate3d(${side[idx]},0,0)`, opacity: 0 }, { transform: 'none', opacity: 1 } ], {
+				duration: 850,
 			})
-		}, (index + 1) * 200)
+		}, (idx + 1) * 200)
 	})
 }
 
@@ -72,13 +74,13 @@ export const animateFadeIn = ({ dom }) => {
 
 export const animateChildrenFadeIn = ({ dom }) => {
 	let children = [ ...dom.children ]
-	children.map((child, index) => {
+	return children.map((child, idx) => {
 		child.style.opacity = 0
 		child.style.transition = 'opacity .2s ease-in-out'
 
 		return setTimeout(() => {
 			child.style.opacity = 1
-		}, (index + 1) * 150)
+		}, (idx + 5) * 150)
 	})
 }
 
