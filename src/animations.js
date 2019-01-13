@@ -80,7 +80,7 @@ export const animateChildrenFadeIn = ({ dom }) => {
 
 		return setTimeout(() => {
 			child.style.opacity = 1
-		}, (idx + 5) * 150)
+		}, (idx + 1) * 850)
 	})
 }
 
