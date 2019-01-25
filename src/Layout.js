@@ -4,7 +4,7 @@ import NavBar from './components/NavBar.js'
 import Footer from './components/Footer.js'
 
 const Layout = {
-	view: ({ children }) => m('section.section', [ m(Heading), m(NavBar), children, m(Footer) ]),
+  view: ({ children }) => [ m(Heading), m(NavBar), children, m(Footer) ],
 }
 
 export default Layout
