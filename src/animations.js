@@ -74,6 +74,29 @@ export const animateFadeIn = ({ dom }) => {
   })
 }
 
+export const slideIn = ({ dom }) => {
+  let children = [ ...dom.children ]
+  console.log(children)
+  return children.map((child, idx) => {
+    return setTimeout(() => {
+      console.log('dom', child)
+      child.style.transition = '0.5s ease-out'
+      child.animate([
+        {
+          // transformOrigin: 'top',
+          opacity: 0,
+          transform: 'translateY(-20%)',
+        },
+        {
+          opacity: 1,
+          transform: 'translateY(0%)',
+        },
+      ])
+      // child.style.opacity = 1
+    }, (idx + 1) * 805)
+  })
+}
+
 export const animateChildrenFadeIn = ({ dom }) => {
   let children = [ ...dom.children ]
   return children.map((child, idx) => {

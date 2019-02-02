@@ -11,7 +11,7 @@
 		"clean-webpack-plugin": "^1.0.0",
 		"css-hot-loader": "^1.4.3",
 		"css-loader": "^2.0.1",
-		"eslint": "^5.11.1",
+		"eslint": "^5.13.0",
 		"eslint-loader": "^2.1.1",
 		"eslint-plugin-mithril": "^0.1.1",
 		"extract-text-webpack-plugin": "^4.0.0-beta.0",
