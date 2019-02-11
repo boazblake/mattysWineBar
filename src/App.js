@@ -2,6 +2,7 @@ import m from 'mithril'
 import Home from './pages/Home.js'
 import Wines from './pages/Wines.js'
 import Layout from './Layout.js'
+import _wines from './pages/data.js'
 
 const routes = {
   '/home': {
@@ -10,7 +11,7 @@ const routes = {
   },
   '/wines': {
     onmatch: () => {},
-    render: () => m(Layout, m(Wines)),
+    render: () => m(Layout, m(Wines, { model: _wines })),
   },
 }
 

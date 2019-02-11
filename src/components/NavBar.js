@@ -1,4 +1,5 @@
 import m from 'mithril'
+import logo from '../assets/logo.png'
 
 const NavState = { active: false }
 
@@ -11,7 +12,7 @@ const NavBar = {
           'a.navbar-item',
           { style: { display: 'inline-block' }, oncreate: m.route.link, href: '/home' },
           m('img.img', {
-            src: 'https://images.pexels.com/photos/65938/wine-bottle-alcohol-beverage-65938.png',
+            src: logo,
           })
         )
       ),

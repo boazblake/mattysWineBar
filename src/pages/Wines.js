@@ -1,24 +1,17 @@
 import m from 'mithril'
 import { slideIn } from '../animations'
-import { _wines } from './data.js'
-
-console.log(_wines.length)
 
 const Wines = () => {
   const state = { status: 'loading' }
 
-  const load = ({ dom }) => {
-    // return setTimeout(() => {
-    state.status = 'loaded'
-    state.wines = _wines.slice(0, 10)
-    return slideIn(dom)
-    // m.redraw()
-    // }, 2000)
+  const load = v => {
+    console.log(v)
+    slideIn(dom)
   }
 
   return {
-    oncreate: load,
-    onupdate: slideIn,
+    // oninit: ({ attrs: { model } }) => (state.wines = model._wines),
+    onupdate: load,
     view: () =>
       state.status == 'loaded'
         ? m(

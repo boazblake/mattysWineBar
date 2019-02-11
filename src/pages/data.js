@@ -1,5 +1,6 @@
+import m from 'mithril'
 
-export const _wines = [
+const data = [
   {
     img: 'https://images.pexels.com/photos/1407846/pexels-photo-1407846.jpeg',
     title: 'Best Wine',
@@ -27597,3 +27598,6 @@ export const _wines = [
   },
 ]
 
+const _wines = () => setTimeout(() => {data, m.redraw()}, 2000)
+
+export default _wines

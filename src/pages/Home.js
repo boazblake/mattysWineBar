@@ -1,5 +1,9 @@
 import m from 'mithril'
 import { animateFadeIn } from './../animations'
+import wineBarrels from '../assets/wineBarrels.jpeg'
+import wineGlass from '../assets/wineGlass.png'
+import winePour from '../assets/winePour.jpg'
+import wineGlasses from '../assets/wineGlasses.jpeg'
 
 const Menu = {
   view: () =>
@@ -33,7 +37,7 @@ const Splash = {
       'section.section',
       {
         style: {
-          'background-image': 'url("https://images.pexels.com/photos/434311/pexels-photo-434311.jpeg")',
+          'background-image': `url("${wineBarrels}")`,
           height: '80vh',
         },
       },
@@ -46,13 +50,13 @@ const Wines = m(
   {
     id: 'wines',
     name: 'wines',
-    style: { 'background-image': 'url("https://images.pexels.com/photos/533257/pexels-photo-533257.png")' },
+    style: { 'background-image': `url("${wineGlass}")` },
   },
   [
     m('.column', [
       m('img.img', {
         style: { display: 'inline-block', width: '750', height: '750' },
-        src: 'https://images.pexels.com/photos/66636/pexels-photo-66636.jpeg',
+        src: wineGlasses,
       }),
     ]),
     m('.column', { style: { 'background-color': 'rgba(236, 240, 241,0.1)', width: '750', height: '750' } }, [
@@ -76,13 +80,13 @@ const About = m(
   {
     id: 'about',
     name: 'about',
-    style: { 'background-image': 'url("https://images.pexels.com/photos/533257/pexels-photo-533257.png")' },
+    style: { 'background-image': `url("${wineGlass}")` },
   },
   [
     m('.column', [
       m('img.img', {
         style: { display: 'inline-block', width: '750', height: '750' },
-        src: 'https://images.pexels.com/photos/66636/pexels-photo-66636.jpeg',
+        src: wineGlasses,
       }),
     ]),
     m('.column', { style: { 'background-color': 'rgba(236, 240, 241,0.1)', width: '750', height: '750' } }, [
@@ -102,7 +106,7 @@ const Products = m(
   {
     id: 'products',
     name: 'products',
-    style: { 'background-image': 'url("https://images.pexels.com/photos/1638423/pexels-photo-1638423.jpeg")' },
+    style: { 'background-image': `url("${winePour}")` },
   },
   [
     m('.column', { style: { 'background-color': 'rgba(236, 240, 241,0.1)', width: '750', height: '750' } }, [
@@ -116,8 +120,8 @@ const Products = m(
     ]),
     m('.column', [
       m('img.img', {
-        style: { display: 'inline-block', width: '750', height: '750' },
-        src: 'https://images.pexels.com/photos/434311/pexels-photo-434311.jpeg',
+        // style: { display: 'inline-block', width: '750', height: '750' },
+        src: wineBarrels,
       }),
     ]),
   ]
@@ -128,7 +132,7 @@ const Contact = m(
   {
     id: 'contact',
     name: 'contact',
-    style: { 'background-image': 'url("https://images.pexels.com/photos/1638423/pexels-photo-1638423.jpeg")' },
+    style: { 'background-image': `url("${winePour}")` },
   },
   [
     m('.column', { style: { 'background-color': 'rgba(236, 240, 241,0.1)', width: '750', height: '750' } }, [
@@ -143,7 +147,7 @@ const Contact = m(
     m('.column', [
       m('img.img', {
         style: { display: 'inline-block', width: '750', height: '750' },
-        src: 'https://images.pexels.com/photos/434311/pexels-photo-434311.jpeg',
+        src: wineBarrels,
       }),
     ]),
   ]

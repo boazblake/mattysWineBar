@@ -1,6 +1,7 @@
 const { resolve } = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   context: resolve(__dirname, 'src'),
@@ -31,11 +32,18 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|jpg|gif)$/,
-        loader: 'url-loader',
-        options: {
-          limit: 10 * 1024,
-        },
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8000, // Convert images < 8kb to base64 strings
+              name: './assets/[name].[ext]',
+              include: 'file-loader',
+              fallback: 'file-loader',
+            },
+          },
+        ],
       },
       {
         test: /\.svg$/,
@@ -71,6 +79,7 @@ module.exports = {
     ],
   },
   plugins: [
+    new CopyWebpackPlugin([ { from: 'assets' } ]),
     new HtmlWebpackPlugin({
       template: '../index.html',
     }),

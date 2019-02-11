@@ -51,13 +51,13 @@ module.exports = merge(common, {
         loader: 'eslint-loader',
         options: {
           cache: true,
-          configFile: '.eslintrc',
+          configFile: '.eslintrc.js',
           emitWarning: true,
           // Fail only on errors
           failOnWarning: false,
           failOnError: false,
           // Toggle autofix
-          fix: false,
+          fix: true,
           formatter: require('eslint/lib/formatters/stylish'),
         },
       },
@@ -65,7 +65,7 @@ module.exports = merge(common, {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: (getPath) => getPath('css/[name].css'),
+      filename: getPath => getPath('css/[name].css'),
       allChunks: true,
     }),
     new webpack.HotModuleReplacementPlugin(),

@@ -1,5 +1,6 @@
 import m from 'mithril'
 import { animateChildrenEntrance } from './../animations'
+import vines from '../assets/vines.jpg'
 
 const Heading = {
   oncreate: animateChildrenEntrance,
@@ -15,7 +16,7 @@ const Heading = {
           backgroundRepeat: 'no-repeat',
           backgroundSize: '100%',
           backgroundPosition: '0%80%',
-          'background-image': 'url("https://images.pexels.com/photos/21393/pexels-photo.jpg")',
+          'background-image': `url(${vines})`,
         },
       },
       [
